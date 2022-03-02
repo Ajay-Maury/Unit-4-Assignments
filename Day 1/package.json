@@ -1,19 +1,19 @@
 {
   "name": "day-1",
   "version": "1.0.0",
-  "description": "First Assignment in Unit-4",
+  "description": "Day 1 Assignment  Unit 4",
   "main": "main.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Ajay-Maury/Unit-4-Assignments.git"
+    "url": "git+https://github.com/Ajay-Maury/Unit-4-Assignments.git#main"
   },
   "author": "Ajay Maurya",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/Ajay-Maury/Unit-4-Assignments/issues"
   },
-  "homepage": "https://github.com/Ajay-Maury/Unit-4-Assignments#readme"
+  "homepage": "https://github.com/Ajay-Maury/Unit-4-Assignments/tree/main#readme"
 }
