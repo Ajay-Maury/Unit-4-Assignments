@@ -1,0 +1,14 @@
+ use assignment
+ db.createCollection("users")
+ db.users.insert({"first_name" :"Ajay","last_name": "Maurya","email":"demo@email.com","gender": "Male","ip_address":"127.01.1","age":22})
+ db.users.insert({"first_name" :"Shobhit","last_name": "Jha","email":"demo2@email.com","gender": "Male","ip_address":"127.01.2","age":23})
+  db.users.insertMany([{first_name:"Kanishka",last_name:"Rajput",email:"demo3@email.com",gender:"Female",ip_address:"127.01.3"},{first_name:"Sneha",last_name:"Naik",email:"demo4@email.com",gender:"Female",ip_address:"127.01.04"},{first_name:"Gyan Prakash",last_name:"Maurya",email:"demo5@email.com",gender:"Male",ip_address:"127.01.5"},{first_name:"Faizan",last_name:"Khan",email:"demo6@email.com",gender:"Male",ip_address:"127.01.6"},{first_name:"Rifakat",last_name:"Ahmad",email:"demo7@email.com",gender:"Male",ip_address:"127.01.7"},{first_name:"Preeti",last_name:"Sharma",email:"demo8@email.com",gender:"Female",ip_address:"127.01.8"},{first_name:"Shivani",last_name:"Banduni",email:"demo9@email.com",gender:"Female",ip_address:"127.01.9"},{first_name:"Abhishek",last_name:"Pandey",email:"demo10@email.com",gender:"Male",ip_address:"127.01.10"}])
+  db.users.find().pretty()
+  db.users.findOne({first_name:"Ajay"})
+  
+  db.users.update({first_name:"Ajay"},{$set:{age:"21"}})
+  db.users.update({"_id":ObjectId("62278d82cff608516bfa1fc9")},{$set:{age:"20"}})
+  db.users.remove({first_name:"Shobhit"})
+   db.users.remove({_id:ObjectId("62278d82cff608516bfa1fc8")})
+ 
+ 
