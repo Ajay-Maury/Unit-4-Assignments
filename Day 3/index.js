@@ -1,36 +1,41 @@
 const express=require("express");
-const app=express();
+const app = express();
 
 app.use(allBooks);
-app.get("/books",(req,res)=>{
-      
- 
-});
+
+app.get("/books",(req,res)=>{      
+     return res.send("Port is running.")
+})
 
 function allBooks(req,res,next){
     console.log("Fetching all books");
     next();
 }
-app.get("/book",login("Herry Poter"),(req,res)=>{
-      res.send("Harry")
- 
+
+app.get("/book/:name",login("HerryPoter"),(req,res)=>{
+      res.send({"bookName": req.name}) 
 });
 
-function login(role){
+
+function login(name){
 
 return function singleBook(req,res,next){
-    if(role==="Herry-Poter"){
-       console.log("he")
-   next();
+    if(req.params.name ==="HerryPoter")
+    {
+       console.log("HerryPoter")
+       next();
+    }
+    else if(req.params.name === "GameOfThrones")
+    {
+        console.log("GameOfThrones")
+        next();
+    }
+    else
+    {
+        console.log("Book not found")
+    }
 }
-if(role==="Titenic"){
-    console.log("hell");
-    next();
- }
-}
-}
+
 app.listen(5003,  ()=>{
-
-console.log("Hii");
-
-});
+    
+})
