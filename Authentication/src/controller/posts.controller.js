@@ -18,7 +18,7 @@ router.get("",async (req, res) => {
 router.post("", authenticate, async (req, res) => {
     req.body.user_Id = req.userID;
     try {
-        const posts = await Posts.create(req.body)
+        const posts = await Posts.create(req.body);
         return res.send(posts)
         
     } catch (error) {
@@ -29,7 +29,9 @@ router.post("", authenticate, async (req, res) => {
 router.patch("/:id", authenticate, async (req, res) => {
     // req.body.user_Id = req.userID;
     try {
-        const posts = await Posts.findByIdAndUpdate(req.params.id)
+        const posts = await Posts.findByIdAndUpdate(req.params.id, req.body, {
+          new: true,
+        });
         return res.send(posts)
         
     } catch (error) {
