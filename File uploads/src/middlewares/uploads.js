@@ -32,8 +32,6 @@ const options = {
   },
 };
 
-// 1kb = 1024 bytes
-// 1mb = 1024 kb
 
 const uploads = multer(options);
 

@@ -50,7 +50,7 @@ router.get("/", async (req, res) => {
     const offset = (page - 1) * size;
 
     const count = Math.ceil(
-      (await User.find({}).countDocuments().lean().exec()) / 10
+      (await User.find({}).countDocuments().lean().exec()) / size
     );
 
     const users = await User.find({}).skip(offset).limit(size).lean().exec();
