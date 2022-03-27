@@ -7,36 +7,36 @@ const router = express.Router();
 router.get("", async (req, res) => {
     try {
         const products = await Product.find({}).lean().exec()
-        res.send(products)
+       return res.send(products)
     } catch (error) {
-        res.send(error.message)
+       return res.send(error.message)
     }
 })
 
 router.post("",authenticate,authorise["admin","seller"] ,async (req, res) => {
     try {
         const product = await Product.create(req.body)
-        res.send(product)
+       return res.send(product)
     } catch (error) {
-        res.send(error.message)
+       return res.send(error.message)
     }
 })
 
 router.patch("/:id",authenticate,authorise["seller","admin"] ,async (req, res) => {
     try {
         const product = await Product.findByIdAndUpdate(req.params.id, req.body, { new: true }).lean().exec()
-        res.send(product)
+       return res.send(product)
     } catch (error) {
-        res.send(error.message)
+       return res.send(error.message)
     }
 })
 
 router.delete("/:id",authenticate,authorise["seller","admin"] ,async (req, res) => {
     try {
         const product = await Product.findByIdAndDelete(req.params.id).lean().exec()
-        res.send(product)
+       return res.send(product)
     } catch (error) {
-        res.send(error.message)
+       return res.send(error.message)
     }
 })
 
